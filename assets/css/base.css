@@ -1,0 +1,116 @@
+body,
+body * {
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    box-sizing: border-box;
+    font-family: Multi, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+:root {
+    --primary-color: #2521a8; 
+    --primary-color-hover: #6c68e6;/* Define a variable for your primary color */
+  }
+
+h1,h2,h3,h4,h5,h6 {
+    letter-spacing: 0.2px;
+    font-family: Multi;
+}
+
+
+button, label {
+    font-family: Multi;
+    letter-spacing: 0.2px;
+}
+a {
+    font-family: Multi;
+    letter-spacing: 0.2px;
+}
+html {
+    margin-top: 0 !important;
+}
+@font-face {
+    font-family: 'Multi Black';
+    font-style: normal;
+    src: url(../fonts/Muli-Black.ttf) ;
+}
+@font-face {
+    font-family: 'Multi Black Italic';
+    font-style: normal;
+    src: url(../fonts/Muli-BlackItalic.ttf) ;
+}
+@font-face {
+    font-family: 'Multi Bold';
+    font-style: normal;
+    src: url(../fonts/Muli-Bold.ttf) ;
+}
+@font-face {
+    font-family: 'Multi Bold Italic';
+    font-style: normal;
+    src: url(../fonts/Muli-BoldItalic.ttf) ;
+}
+@font-face {
+    font-family: 'Multi Extra Bold ';
+    font-style: normal;
+    src: url(../fonts/Muli-ExtraBold.ttf) ;
+}
+@font-face {
+    font-family: 'Multi Extra Bold Italic ';
+    font-style: normal;
+    src: url(../fonts/Muli-ExtraBoldItalic.ttf) ;
+}
+@font-face {
+    font-family: 'Multi Extra Light ';
+    font-style: normal;
+    src: url(../fonts/Muli-ExtraLight.ttf) ;
+}
+@font-face {
+    font-family: 'Multi Extra Light Italic ';
+    font-style: normal;
+    src: url(../fonts/Muli-ExtraLightItalic.ttf) ;
+}
+@font-face {
+    font-family: 'Multi Light ';
+    font-style: normal;
+    src: url(../fonts/Muli-Light.ttf) ;
+}
+@font-face {
+    font-family: 'Multi Light Italic ';
+    font-style: normal;
+    src: url(../fonts/Muli-LightItalic.ttf) ;
+}
+@font-face {
+    font-family: 'Multi';
+    font-style: normal;
+    src: url(../fonts/Muli-Regular.ttf) ;
+}
+@font-face {
+    font-family: 'Multi Italic';
+    font-style: normal;
+    src: url(../fonts/Muli-RegularItalic.ttf) ;
+}
+@font-face {
+    font-family: 'Multi Italic';
+    font-style: normal;
+    src: url(../fonts/Muli-RegularItalic.ttf) ;
+}
+@font-face {
+    font-family: 'Multi SemiBold';
+    font-style: normal;
+    src: url(../fonts/Muli-SemiBold.ttf) ;
+}
+@font-face {
+    font-family: 'Multi SemiBold Italic';
+    font-style: normal;
+    src: url(../fonts/Muli-SemiBoldItalic.ttf) ;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}

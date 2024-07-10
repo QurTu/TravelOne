@@ -1,0 +1,153 @@
+.blog-article-container {
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+
+
+
+/* Body text style */
+.blog-article-container body {
+    font-family: 'Multi';
+    line-height: 1.6;
+    font-size: 16px;
+    color: #333;
+    margin: 20px; /* Add margin to the body for spacing */
+}
+
+/* Headings style */
+.blog-article-container h1,
+.blog-article-container h2,
+.blog-article-container h3 {
+    
+    font-family: 'Multi Extra Bold';
+    font-weight: bold;
+    text-align: center;
+    margin: 30px 0 30px; /* Adjust margins for headings */
+}
+
+.blog-article-container h1 {
+    font-size: 28px;
+    color: #1a237e; /* Dark blue */
+}
+
+.blog-article-container h2 {
+    font-size: 24px;
+
+}
+
+.blog-article-container h3 {
+    font-size: 20px;
+   
+}
+.blog-article-container h4 {
+    margin-bottom: 10px;
+   
+}
+
+.blog-article-container p {
+    color: #6b6b6b;
+    font-family: Multi;
+}
+
+/* Paragraph and list style */
+.blog-article-container p,
+.blog-article-container ul,
+.blog-article-container ol {
+    margin-bottom: 15px;
+    font-family: Multi;
+}
+
+.blog-article-container ul,
+.blog-article-container ol {
+    margin-left: 20px;
+}
+
+.blog-article-container li {
+    margin-bottom: 5px;
+}
+
+/* Image style */
+.blog-article-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px 0; /* Adjust margin around images */
+}
+
+/* Table style */
+.blog-article-container table {
+    width: 100%;
+    margin-bottom: 20px; /* Increase margin below tables */
+    border-collapse: collapse;
+}
+
+.blog-article-container th,
+.blog-article-container td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.blog-article-container th {
+    background-color: #f2f2f2; /* Light gray */
+}
+
+/* Emphasized text (e.g., italic) */
+.blog-article-container em {
+    font-style: italic;
+}
+
+/* Strong text (e.g., bold) */
+.blog-article-container strong {
+    font-weight: bold;
+    font-family: 'Multi Extra Bold';
+    color: #000; /* Dark pink */
+}
+
+@media (max-width: 1240px) { 
+    .blog-article-container {
+        
+        margin: 30px 20px;
+    }
+    
+}
+
+/* Media queries for desktop */
+@media (min-width: 768px) {
+   
+
+    .blog-article-container body {
+        font-size: 18px; /* Increase font size for desktop */
+        line-height: 1.8; /* Increase line height for desktop */
+    }
+
+    .blog-article-container h1 {
+        font-size: 36px; /* Increase h1 font size for desktop */
+        margin-top: 30px; /* Adjust top margin for h1 */
+    }
+
+    .blog-article-container h2 {
+        font-size: 28px; /* Increase h2 font size for desktop */
+    }
+
+    .blog-article-container h3 {
+        font-size: 24px; /* Increase h3 font size for desktop */
+    }
+
+    .blog-article-container p,
+    .blog-article-container ul,
+    .blog-article-container ol {
+        margin-bottom: 20px; /* Increase bottom margin for paragraphs and lists */
+    }
+
+    .blog-article-container img {
+        width: 100%;
+        height: auto;
+        margin: 20px 0; /* Adjust margin around images */
+    }
+
+    .blog-article-container table {
+        margin-bottom: 30px; /* Increase margin below tables */
+    }
+}

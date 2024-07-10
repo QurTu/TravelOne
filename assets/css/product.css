@@ -1,0 +1,293 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.product-page-container {
+    margin: 50px auto;
+    max-width: 1400px;
+}
+
+.product-section-all {
+    margin: 30px 0 20px;
+    text-align: center;
+    
+}
+.product-page-container h3 {
+    font-family: 'Multi Extra Bold ';
+    margin-bottom: 20px;
+    text-align: center;
+}
+.product-section-texts-part p {
+    text-align: start;
+    color: #6b6b6b;
+    font-family: Multi;
+    font-size: 16px;
+}
+.product-section-texts-part {
+    margin-top: 20px;
+}
+
+
+.product-section-image-part img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+
+
+.product-sections-container .product-section-header,
+.slider-sections-header {
+    max-width: 800px;
+    margin: 50px auto 20px;
+}
+
+.product-sections-container h2,
+.slider-container h2 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Multi Extra Bold ';
+    font-size: 35px;
+    line-height: 38px;
+}
+
+.product-sections-container p ,
+.slider-container.splide .splide__slide p{
+    color: #6b6b6b;
+    font-family: Multi;
+    font-size: 16px;
+}
+.product-section-main-info {
+    display: flex;
+    flex-direction: column;
+    
+    width: 100%;
+}
+.product-section-main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.slider-container {
+    margin: 0px 0 50px;
+    width: 100%;
+    display: inline-block;
+}
+
+.products-navigation-bar {
+    border-bottom: solid 1px #dfe0e4;
+    border-top: solid 1px #dfe0e4;
+    margin-top: 20px;
+    padding: 20px 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.product-section-texts-part a{
+    text-decoration: none;
+    color: #000;
+}
+ 
+
+.products-navigation-bar a{
+    text-decoration: none;
+    font-family: 'Multi Extra Bold ';
+    color: #000;font-size: 20px;
+}
+
+.products-navigation-bar a:hover {
+    color: var(--primary-color);
+}
+
+
+.slider-container.splide .splide__slide {
+    padding: 10px;
+}
+.splide__slide img {
+    border-radius: 15px;
+}
+.slider-container.splide .splide__slide img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+#thumbnail-carousel .splide__slide {
+    margin-top: 10px;
+    border-radius: 15px;
+}
+
+#thumbnail-carousel .splide__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+
+
+  .product-page-container .product-header-container  .product-header-information {
+    display: grid;
+    grid-template-columns: 60% 40%;
+  }
+
+  
+  .splide__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slider-container .splide__pagination  {
+    display: none;
+    bottom: -10px;
+  }
+ 
+  .product-page-container p {
+    text-align: start;
+    color: #6b6b6b;
+    font-family: Multi;
+    font-size: 16px;
+    margin: 10px 0 10px;
+  }
+
+  .product-header-all-info .hotel-info h1 {
+    font-size: 40px;
+    line-height: 42px;
+  }
+  .hotel-booking-button-container {
+    text-align: center;
+  }
+  .hotel-info-button.product-page-button {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+    text-decoration: none;
+    padding: 20px 50px;
+  }
+  .product-page-container .hotel-info-button {
+    padding: 20px 50px;
+  }
+
+  .product-page-container .rating-wrapper .hotel-raiting-value {
+    font-size: 32px;
+  }
+
+  .slider-simple-img-container {
+    border-radius: 50px;
+  }
+
+  .slider-container .splide__arrow--next {
+    right: -20px;
+  }
+
+  .slider-container .splide__arrow--prev {
+    left: -20px;
+   }
+
+
+@media screen and (max-width: 1440px) { 
+    .product-page-container {
+        margin: 50px 20px;
+    }
+    .product-header-all-info .hotel-info h1 {
+        font-size: 32px;
+        line-height: 34px;
+      }
+}
+
+@media screen and (max-width: 1440px) { 
+    .product-page-container {
+        margin: 50px 20px;
+    }
+    .product-header-all-info .hotel-info h1 {
+        font-size: 32px;
+        line-height: 34px;
+      }
+}
+
+@media screen and (max-width: 1100px) { 
+    .product-page-container p ,
+    .product-sections-container p, 
+    .slider-container.splide .splide__slide p {
+        font-size: 14px;
+    }  
+}
+
+@media screen and (max-width: 997px) { 
+    .product-page-container .product-header-container  .product-header-information {
+        display: block;
+        grid-template-columns: 1fr;
+      }
+      .hotel-info {
+        margin-top: 40px;
+      }
+      .product-section-image-part img {
+        height: 200px;
+      }
+    
+}
+
+@media screen and (max-width: 897px) { 
+    .product-section-main-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .product-sections-container .product-section-header, .slider-sections-header {
+        margin: 30px 50px 20px;
+    }
+    .product-section-all  {
+        margin: 30px 0px 20px;
+    }
+        
+    
+}
+
+@media screen and (max-width: 597px) { 
+    .product-section-main-container {
+        display: block;
+    }
+    .slider-container.splide .splide__slide img  {
+        height: auto;
+    }
+    .product-section-image-part img {
+        height: auto;
+    }
+    .product-page-container {
+        margin: 20px 20px;
+    }
+    .product-page-container .hotel-info-button  {
+        padding: 10px 15px;
+    }
+    .product-page-container .rating-wrapper .hotel-raiting-value  {
+        font-size: 24px;
+    }
+    .product-section-main-info {
+        margin-bottom: 20px;
+    }
+    .product-page-container h3 {
+        margin-bottom: 0px;
+    }
+    .product-sections-container h2,
+    .slider-container h2 {
+        font-size: 25px;
+        line-height: 27px;
+    }
+    .product-sections-container .product-section-header,
+    .slider-sections-header  {
+        margin: 40px 0px 20px;
+
+    }
+    .products-navigation-bar {
+        display: none;
+    }
+    .product-page-container .hotel-info {
+        margin-top: 30px;
+    }
+    .product-header-all-info .hotel-info h1 {
+        font-size: 27px;
+        line-height: 30px;
+    }
+    
+}
