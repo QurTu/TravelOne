@@ -62,7 +62,6 @@ html {
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    
     width: 100%;
 }
 .product-section-main-info h3 {
