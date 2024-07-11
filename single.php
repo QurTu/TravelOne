@@ -14,14 +14,16 @@ if (have_posts()) :
             <?php the_content(); ?>
         </div>
 
-        <amp-ad width="100vw" height="320"
-            type="adsense"
-            data-ad-client="ca-pub-2804192452844752"
-            data-ad-slot="2049943956"
-            data-auto-format="mcrspv"
-            data-full-width="">
-        <div overflow=""></div>
-        </amp-ad>
+        <div class="blog-article-container" >
+            <amp-ad width="100vw" height="320"
+                type="adsense"
+                data-ad-client="ca-pub-2804192452844752"
+                data-ad-slot="2049943956"
+                data-auto-format="mcrspv"
+                data-full-width="">
+            <div overflow=""></div>
+            </amp-ad>
+        </div>
 
 <?php endwhile;
 else :

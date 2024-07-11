@@ -6,7 +6,7 @@ get_header();
     while(have_posts()) :
     the_post(); ?>
 
-    <div id="page_wrapper" class="all-page-wrapper">
+<div class="blog-article-container">
         <?php the_content(); ?>
     </div> <!-- .post -->
 <?php endwhile;
