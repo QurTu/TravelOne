@@ -35,7 +35,7 @@
                     <a href="<?php echo $item['url'] ?>" class="nav-eliment">
                         <p class="<?php if ($item['url'] == $current_url) echo 'nav-menu-p-active' ?>"> <?php echo $item['title'] ?></p>
                     </a>
-
+                    test
                     <?php
                     if (!empty($item['children'])) {
                     ?>
