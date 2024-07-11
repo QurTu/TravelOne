@@ -59,10 +59,14 @@ html {
     font-size: 16px;
 }
 .product-section-main-info {
+    text-decoration: none;
     display: flex;
     flex-direction: column;
     
     width: 100%;
+}
+.product-section-main-info h3 {
+    color: #000;
 }
 .product-section-main-container {
     display: grid;

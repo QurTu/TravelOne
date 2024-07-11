@@ -4,6 +4,7 @@ Template Name: Homepage Template
 */
 get_header(); // This includes the header.php file
 
+
 ?>
 <div class="homepage-container homepage">
       <div class="hero-section">
@@ -141,16 +142,52 @@ get_header(); // This includes the header.php file
     <div class="product-page-container">
       <div class="product-sections-container">
         <div class="product-section-header">
-          <h2>Rooms and Acomidation</h2>
+          <h2>Hotels and Resorts</h2>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil
-            exercitationem obcaecati repudiandae repellat eos ea itaque
-            inventore harum dolore. Saepe illum possimus sequi ex necessitatibus
-            deleniti, cupiditate voluptates explicabo maxime!
+          Discover unparalleled luxury and breathtaking experiences with our handpicked 
+          selection of hotels and resorts across three iconic destinations: Turkey, Greece, and Egypt. 
+          Your perfect getaway awaits in the heart of these timeless destinations.
           </p>
         </div>
       </div>
       <div class="product-section-main-container">
+      
+      <?php
+     $category_slugs = array('turkey', 'greece', 'egypt');
+     $categories_info = get_category_info_by_slugs($category_slugs);
+     
+     // Display the retrieved information
+     foreach ($categories_info as $category) {
+        ?>
+
+        <a  href=<?php echo $category['archive_url'] ?> class="product-section-main-info">
+          <div class="product-section-image-part">
+            <img src="<?php echo $category['image_url'] ?>" alt="" loading="lazy" />
+          </div>
+          <div class="product-section-texts-part">
+            <h3>  <?php echo $category['name'] ?></h3>
+            <p> <?php echo $category['description'] ?></p>
+          </div>
+       </a>
+      
+         
+
+     
+
+     
+        <?php
+
+
+
+      
+     }
+     
+   
+      
+    
+    ?>
+   
+
         <div class="product-section-main-info">
           <div class="product-section-image-part">
             <img src="/img/test3.jpg" alt="" loading="lazy" />
@@ -160,6 +197,8 @@ get_header(); // This includes the header.php file
             <p>Lorem ipsum dolor sit amet consectetur.</p>
           </div>
         </div>
+
+
         <div class="product-section-main-info">
           <div class="product-section-image-part">
             <img src="/img/test.jpg" alt="" loading="lazy" />

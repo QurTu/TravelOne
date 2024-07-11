@@ -286,3 +286,27 @@ function wp_get_menu_array($current_menu) {
 }
 
 
+function get_category_info_by_slugs($category_slugs) {
+    $categories_info = array();
+
+    foreach ($category_slugs as $slug) {
+        $term = get_term_by('slug', $slug, 'hotels_resorts_category');
+        
+        if ($term && !is_wp_error($term)) {
+            $image_id = get_term_meta($term->term_id, 'category-image-id', true);
+            $image_url = $image_id ? wp_get_attachment_url($image_id) : '';
+
+            $categories_info[] = array(
+                'id' => $term->term_id,
+                'name' => $term->name,
+                'slug' => $term->slug,
+                'description' => $term->description,
+                'count' => $term->count,
+                'image_url' => $image_url,
+                'archive_url' => get_term_link($term)
+            );
+        }
+    }
+
+    return $categories_info;
+}
