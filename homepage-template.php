@@ -28,62 +28,45 @@ get_header(); // This includes the header.php file
     <div class="product-section-header">
       <h2>Our Blog</h2>
       <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil
-        exercitationem obcaecati repudiandae repellat eos ea itaque
-        inventore harum dolore. Saepe illum possimus sequi ex necessitatibus
-        deleniti, cupiditate voluptates explicabo maxime!
+      Join us as we traverse the globe, one story at a time. 
+      Let TripTalesToday be your compass in the vast world of travel,
+       guiding you to new horizons and unforgettable experiences.
+        Pack your bags, open your mind, and let the journey begin!
       </p>
     </div>
   </div>
   <div class="product-section-main-container">
-    <div class="product-section-main-info">
-      <div class="product-section-image-part">
-        <img src="/img/test3.jpg" alt="" loading="lazy" />
-      </div>
-      <div class="product-section-texts-part">
-        <h3>Lorem ipsum dolor sit amet.</h3>
-        <p>Lorem ipsum dolor sit amet consectetur.</p>
-      </div>
-    </div>
-    <div class="product-section-main-info">
-      <div class="product-section-image-part">
-        <img src="/img/test.jpg" alt="" loading="lazy" />
-      </div>
-      <div class="product-section-texts-part">
-        <h3>Lorem ipsum dolor sit amet.</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-          quo facilis molestiae recusandae, quisquam modi odit nisi
-          laudantium veniam id officia maiores, ipsam fugit. Consectetur
-          soluta quibusdam incidunt earum magnam similique, nam distinctio
-          quos et, cumque laborum debitis magni perferendis. Voluptatibus
-          saepe labore perferendis debitis illo ullam voluptatum ratione
-          similique.
-        </p>
-      </div>
-    </div>
-    <div class="product-section-main-info">
-      <div class="product-section-image-part">
-        <img src="/img/test3.jpg" alt="" loading="lazy" />
-      </div>
-      <div class="product-section-texts-part">
-        <h3>Lorem ipsum dolor sit amet.</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-          quo facilis molestiae recusandae, quisquam modi odit nisi
-          laudantium veniam id officia maiores, ipsam fugit. Consectetur
-          soluta quibusdam incidunt earum magnam similique, nam distinctio
-          quos et, cumque laborum debitis magni perferendis. Voluptatibus
-          saepe labore perferendis debitis illo ullam voluptatum ratione
-          similique.
-        </p>
-      </div>
-    </div>
+  <?php
+  $latest_posts = get_latest_posts('post', 3);
+
+if ($latest_posts->have_posts()) :
+    while ($latest_posts->have_posts()) : $latest_posts->the_post();
+        ?>
+
+      <a href="<?php the_permalink(); ?>"  class="product-section-main-info">
+            <div class="product-section-image-part">
+              <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" loading="lazy" />
+            </div>
+            <div class="product-section-texts-part">
+              <h3><?php the_title(); ?></h3>
+              <p> <?php the_excerpt(); ?></p>
+            </div>
+      </a>
+
+
+        <?php
+    endwhile;
+
+    // Restore original post data
+    wp_reset_postdata();
+
+endif;
+?>
   </div>
 </div>
 
 <div id="statistics" class="statistics">
-  <div class="blog-article-container">
+  <div class="blog-article-container stats-container">
     <div class="statistics-counter">
       <div class="col-md-3 col-sm-6">
         <div class="single-ststistics-box">

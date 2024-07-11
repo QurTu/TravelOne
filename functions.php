@@ -307,6 +307,20 @@ function get_category_info_by_slugs($category_slugs) {
             );
         }
     }
-
     return $categories_info;
+}
+
+
+function get_latest_posts($post_type = 'post', $posts_per_page = 3) {
+    $args = array(
+        'post_type'      => $post_type,
+        'posts_per_page' => $posts_per_page,
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+        'post_status'    => 'publish'
+    );
+
+    $latest_posts = new WP_Query($args);
+
+    return $latest_posts;
 }

@@ -90,3 +90,70 @@
     font-weight: 500;
     margin: 5px;
 }
+.blog-article-container.stats-container {
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+
+@media screen and (max-width: 1500px) {
+    .welcome-hero-txt {
+        padding-top: 155px;
+    }
+    .welcome-hero-txt h1 {
+        font-size: 40px;
+        letter-spacing: 2.4px;
+        line-height: 1.2;
+    }
+    .welcome-hero-txt p {
+        font-size: 16px;
+    }
+}
+
+
+@media screen and (max-width: 1150px) {
+    .welcome-hero-txt {
+        padding-top: 75px;
+    }
+    .welcome-hero-txt h1 {
+        font-size: 35px;
+        letter-spacing: 2.4px;
+        line-height: 1.2;
+    }
+    .hero-section {
+        max-height: 400px;
+    }
+    .blog-article-container.stats-container {
+        margin: 20px auto;
+    }
+    .statistics {
+        padding: 100px 0;
+    }
+    .statistics-content {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .welcome-hero-txt {
+        padding-top: 15px;
+    }
+    .welcome-hero-txt h1 {
+        font-size: 26px;
+        letter-spacing: 2.4px;
+        line-height: 1.2;
+    }
+    .welcome-hero-txt p {
+        font-size: 14px;
+    }
+    .hero-section {
+        max-height: 300px;
+    }
+    .statistics {
+        padding: 20px 0;
+    }
+    .statistics-counter {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
