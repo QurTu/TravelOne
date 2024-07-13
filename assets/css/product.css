@@ -26,6 +26,15 @@ html {
 .product-section-texts-part {
     margin-top: 20px;
 }
+.product-section-texts-part .social-media-with-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.product-section-texts-part .social-media-with-icons p {
+    line-height: 16px;
+}
 
 
 .product-section-image-part img {
