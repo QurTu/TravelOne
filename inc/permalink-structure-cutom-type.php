@@ -30,10 +30,10 @@ function custom_post_type_link($post_link, $post) {
 }
 
 // Modify the main query to include custom post types
-add_action('pre_get_posts', 'include_custom_post_types_in_query', 12);
+add_action('pre_get_posts', 'include_custom_post_types_in_query', 3);
 function include_custom_post_types_in_query($query) {
     if (!is_admin() && $query->is_main_query()) {
-        if ($query->is_search() || $query->is_archive()) {
+        if ($query->is_search() ) {
             $query->set('post_type', array('post', 'hotels-resorts'));
         }
     }

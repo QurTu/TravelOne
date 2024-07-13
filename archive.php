@@ -6,6 +6,9 @@ get_header();
 <div class="archive-container">
     <div class="sidebar">
         <h2>Search by Category:</h2>
+        <p><?php echo get_post_type_archive_link( 'hotels-resorts' ) ?>"></p>
+        
+        <p>ddd</p>
         <div class="toggle-menu-main-nav">
             <?php
             foreach ($headerNavBar as $item) {
