@@ -1,7 +1,7 @@
 <?php
 get_header();
 ?>
-<?php $headerNavBar  =  wp_get_menu_array('Hotels Side Bar');   ?>
+<?php $headerNavBar  =  wp_get_menu_array('Articles Side Bar');   ?>
 
 <div class="archive-container">
     <div class="sidebar">
@@ -53,6 +53,12 @@ get_header();
                                             </a>
                                         </div>
                                         <div class="hotel-info">
+                                        <a href="<?php the_permalink(); ?>">
+                                                <div class="hotel-name-stars">
+                                                    <h2 class="hotel-name"><?php the_title(); ?></h2>
+                                                   
+                                                </div>
+                                            </a>
                                            
                                             <?php if ($hotel_categories && !is_wp_error($hotel_categories)) : ?>
                                                 <div class="hotel-category">
@@ -73,25 +79,12 @@ get_header();
                                                 </div>
                                             <?php endif; ?>
 
-                                            <a href="<?php the_permalink(); ?>" class="hotel-tags"> <?php
-                                                if ($perks) :
-                                                    foreach ($perks as $perk) : ?>
-                                                        <span> <?php echo $perk; ?></span>
-                                                <?php
-                                                    endforeach;
-                                                endif;
-                                                ?>
+                                            <a href="<?php the_permalink(); ?>" class="hotel-tags"> 
+                                            <p><?php echo custom_excerpt(30); ?></p>
                                             </a>
-                                            <a href="<?php the_permalink(); ?>" class="hotel-info-button">Details </a>
+                                            <a href="<?php the_permalink(); ?>" class="hotel-info-button">Read Article </a>
 
-                                            <a href="<?php the_permalink(); ?>" class="hotel-raitings">
-                                                <div class="rating-wrapper">
-                                                    <div class="hotel-raiting-value"><?php echo get_field('rating') ?></div>
-                                                    <div class="hotel-rating-text">raiting</div>
-                                                </div>
-
-
-                                            </a>
+                                           
                                         </div>
 
 

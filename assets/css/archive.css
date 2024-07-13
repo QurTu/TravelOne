@@ -137,6 +137,10 @@
     display: none;
 
 }
+.hotel-info p {
+    color: #5f5454;
+    font-size: 14px;
+}
 
  .hotel-info .hotel-stars {
     display: inline-block;
