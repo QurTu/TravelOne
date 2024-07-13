@@ -104,6 +104,9 @@ html {
 .products-navigation-bar a:hover {
     color: var(--primary-color);
 }
+#main-carousel .splide__list {
+ max-height: 500px;
+}
 
 
 .slider-container.splide .splide__slide {
@@ -294,5 +297,15 @@ html {
         font-size: 27px;
         line-height: 30px;
     }
+    #main-carousel .splide__list {
+        max-height: 300px;
+       }
+       
     
+}
+
+@media screen and (max-width: 400px) {  
+    #main-carousel .splide__list {
+        max-height: 200px;
+       }
 }
