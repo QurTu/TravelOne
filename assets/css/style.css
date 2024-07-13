@@ -9,13 +9,14 @@
 @import url('../js/splide/dist/css/themes/splide-skyblue.min.css');
 /* base Now todo to clean up */
 
+.about-us-image img {
+    width: 100%;
+    height: auto;
 
+}
 
 .footer-wrap {
     padding: 20px 200px 20px;
-}
-.footer-copy-rights {
-
 }
 
 @media screen and (max-width: 1500px) {

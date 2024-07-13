@@ -157,11 +157,6 @@ endif;
   </div>
 </div>
 
-<amp-ad width="100vw" height="320" type="adsense" data-ad-client="ca-pub-2804192452844752" data-ad-slot="2049943956" data-auto-format="mcrspv" data-full-width="">
-  <div overflow=""></div>
-</amp-ad>
-
-
 
 <?php
 get_footer();

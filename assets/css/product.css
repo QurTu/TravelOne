@@ -44,6 +44,7 @@ html {
 }
 
 .product-sections-container h2,
+.product-sections-container h1,
 .slider-container h2 {
     margin-bottom: 10px;
     text-align: center;
@@ -273,6 +274,7 @@ html {
         margin-bottom: 0px;
     }
     .product-sections-container h2,
+    .product-sections-container h1,
     .slider-container h2 {
         font-size: 25px;
         line-height: 27px;
