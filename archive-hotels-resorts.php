@@ -43,6 +43,7 @@ get_header();
                             <?php if (have_posts()) : ?>
                                 <?php while (have_posts()) : the_post();
                                     $hotel_categories = get_the_terms(get_the_ID(), 'hotels_resorts_category');
+                                    $stars = get_field('stars');
                                     $perks = get_field('perks');
                                 ?>
                                     <div class="hotel-container" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -53,7 +54,18 @@ get_header();
                                             </a>
                                         </div>
                                         <div class="hotel-info">
-                                           
+                                            <a href="<?php the_permalink(); ?>">
+                                                <div class="hotel-name-stars">
+                                                    <h2 class="hotel-name"><?php the_title(); ?></h2>
+                                                    <div class="hotel-stars">
+                                                        <?php for ($i = 0; $i < $stars; $i++) : ?>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="star-icon">
+                                                                <path d="M23.555 8.729a1.505 1.505 0 0 0-1.406-.98h-6.087a.5.5 0 0 1-.472-.334l-2.185-6.193a1.5 1.5 0 0 0-2.81 0l-.005.016-2.18 6.177a.5.5 0 0 1-.471.334H1.85A1.5 1.5 0 0 0 .887 10.4l5.184 4.3a.5.5 0 0 1 .155.543l-2.178 6.531a1.5 1.5 0 0 0 2.31 1.684l5.346-3.92a.5.5 0 0 1 .591 0l5.344 3.919a1.5 1.5 0 0 0 2.312-1.683l-2.178-6.535a.5.5 0 0 1 .155-.543l5.194-4.306a1.5 1.5 0 0 0 .433-1.661"></path>
+                                                            </svg>
+                                                        <?php endfor; ?>
+                                                    </div>
+                                                </div>
+                                            </a>
                                             <?php if ($hotel_categories && !is_wp_error($hotel_categories)) : ?>
                                                 <div class="hotel-category">
                                                     <?php

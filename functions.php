@@ -63,6 +63,8 @@ function ws_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
         'capability_type' => 'post',
         'hierarchical' => true,
         'rewrite' => array('slug' => 'hotels-resorts', 'with_front' => false),
@@ -86,8 +88,8 @@ add_theme_support('post-thumbnails', array('hotels-resorts'));
 add_action('init', 'ws_register_taxonomy');
 function ws_register_taxonomy() {
     $labels = array(
-        'name' => 'Categories',
-        'singular_name' => 'Category',
+        'name' => 'Hotels Categories',
+        'singular_name' => 'Hotel Category',
         'search_items' => 'Search Categories',
         'all_items' => 'All Categories',
         'parent_item' => 'Parent Category',
@@ -96,13 +98,15 @@ function ws_register_taxonomy() {
         'update_item' => 'Update Category',
         'add_new_item' => 'Add New Category',
         'new_item_name' => 'New Category Name',
-        'menu_name' => 'Categories',
+        'menu_name' => ' Hotels Categories',
     );
 
     $args = array(
         'hierarchical' => true,
         'labels' => $labels,
         'show_ui' => true,
+        'show_in_menu'       => true,
+        'show_in_nav_menus' => true,
         'show_admin_column' => true,
         'query_var' => true,
         'rewrite' => array('slug' => 'hotels-resorts-category', 'with_front' => false),
@@ -323,4 +327,66 @@ function get_latest_posts($post_type = 'post', $posts_per_page = 3) {
     $latest_posts = new WP_Query($args);
 
     return $latest_posts;
+}
+
+function custom_woocommerce_style_pagination() {
+    global $wp_query;
+
+    if ( $wp_query->max_num_pages <= 1 ) {
+        return;
+    }
+
+    $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+    $max   = intval( $wp_query->max_num_pages );
+
+    if ( $paged >= 1 ) {
+        $links[] = $paged;
+    }
+
+    if ( $paged >= 3 ) {
+        $links[] = $paged - 1;
+        $links[] = $paged - 2;
+    }
+
+    if ( ( $paged + 2 ) <= $max ) {
+        $links[] = $paged + 2;
+        $links[] = $paged + 1;
+    }
+
+    echo '<nav class="woocommerce-pagination">';
+    echo '<ul class="page-numbers">';
+
+    if ( get_previous_posts_link() ) {
+        printf( '<li>%s</li>', get_previous_posts_link( '&larr;' ) );
+    }
+
+    if ( ! in_array( 1, $links ) ) {
+        $class = 1 == $paged ? ' class="current"' : '';
+        printf( '<li><a href="%s"%s>%s</a></li>', esc_url( get_pagenum_link( 1 ) ), $class, '1' );
+
+        if ( ! in_array( 2, $links ) ) {
+            echo '<li class="dots">…</li>';
+        }
+    }
+
+    sort( $links );
+    foreach ( (array) $links as $link ) {
+        $class = $paged == $link ? ' class="current"' : '';
+        printf( '<li><a href="%s"%s>%s</a></li>', esc_url( get_pagenum_link( $link ) ), $class, $link );
+    }
+
+    if ( ! in_array( $max, $links ) ) {
+        if ( ! in_array( $max - 1, $links ) ) {
+            echo '<li class="dots">…</li>';
+        }
+        $class = $paged == $max ? ' class="current"' : '';
+        printf( '<li><a href="%s"%s>%s</a></li>', esc_url( get_pagenum_link( $max ) ), $class, $max );
+    }
+
+    if ( get_next_posts_link() ) {
+        printf( '<li>%s</li>', get_next_posts_link( '&rarr;' ) );
+    }
+
+    echo '</ul>';
+    echo '</nav>';
 }
