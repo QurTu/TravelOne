@@ -103,7 +103,7 @@ get_header();
                                 endif;
                                 ?>
                             </div>
-                            <a href="<?php echo esc_url(get_field('link')); ?>" target="_blank" rel="noopener noreferrer" class="hotel-info-button">Book Now!</a>
+                            <a href="<?php echo esc_url(get_field('link')); ?>" target="_blank" rel="noopener noreferrer nofollow sponsored" class="hotel-info-button">Book Now!</a>
                             <?php the_content(); ?>
                             <div class="hotel-raitings">
                                 <div class="rating-wrapper">
@@ -238,7 +238,7 @@ get_header();
  </div> -->
 
             <div class="hotel-booking-button-container">
-                <a href="<?php echo esc_url(get_field('link')); ?>" class="hotel-info-button product-page-button">Book Now! </a>
+                <a href="<?php echo esc_url(get_field('link')); ?>" rel="noopener noreferrer nofollow sponsored" class="hotel-info-button product-page-button">Book Now! </a>
             </div>
     <?php
     the_post();
