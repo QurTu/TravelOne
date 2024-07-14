@@ -1,5 +1,3 @@
-
-
 <?php
 // Custom permalink structure for posty ( adds 2 category)
 $GLOBALS['my_custom_post_types'] = array('hotels-resorts');
