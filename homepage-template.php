@@ -23,47 +23,47 @@ get_header(); // This includes the header.php file
     </div>
   </div>
 </div>
+
+
+
 <div class="product-page-container">
   <div class="product-sections-container">
     <div class="product-section-header">
-      <h2>Our Blog</h2>
+      <h2>Hotels and Resorts</h2>
       <p>
-      Join us as we traverse the globe, one story at a time. 
-      Let TripTalesToday be your compass in the vast world of travel,
-       guiding you to new horizons and unforgettable experiences.
-        Pack your bags, open your mind, and let the journey begin!
+        Discover unparalleled luxury and breathtaking experiences with our handpicked
+        selection of hotels and resorts across three iconic destinations: Turkey, Greece, and Egypt.
+        Your perfect getaway awaits in the heart of these timeless destinations.
       </p>
     </div>
   </div>
   <div class="product-section-main-container">
-  <?php
-  $latest_posts = get_latest_posts('post', 3);
 
-if ($latest_posts->have_posts()) :
-    while ($latest_posts->have_posts()) : $latest_posts->the_post();
-        ?>
+    <?php
+    $category_slugs = array('turkey', 'greece', 'egypt');
+    $categories_info = get_category_info_by_slugs($category_slugs);
 
-      <a href="<?php the_permalink(); ?>"  class="product-section-main-info">
-            <div class="product-section-image-part">
-              <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" loading="lazy" />
-            </div>
-            <div class="product-section-texts-part">
-              <h3><?php the_title(); ?></h3>
-              <p> <?php the_excerpt(); ?></p>
-            </div>
+    // Display the retrieved information
+    foreach ($categories_info as $category) {
+    ?>
+      <a href=<?php echo $category['archive_url'] ?> class="product-section-main-info">
+        <div class="product-section-image-part">
+          <img src="<?php echo $category['image_url'] ?>" alt="" loading="lazy" />
+        </div>
+        <div class="product-section-texts-part">
+          <h3> <?php echo $category['name'] ?></h3>
+          <p> <?php echo $category['description'] ?></p>
+        </div>
       </a>
-
-
-        <?php
-    endwhile;
-
-    // Restore original post data
-    wp_reset_postdata();
-
-endif;
-?>
+    <?php
+    }
+    ?>
   </div>
 </div>
+
+
+
+
 
 <div id="statistics" class="statistics">
   <div class="blog-article-container stats-container">
@@ -125,35 +125,42 @@ endif;
 <div class="product-page-container">
   <div class="product-sections-container">
     <div class="product-section-header">
-      <h2>Hotels and Resorts</h2>
+      <h2>Our Blog</h2>
       <p>
-        Discover unparalleled luxury and breathtaking experiences with our handpicked
-        selection of hotels and resorts across three iconic destinations: Turkey, Greece, and Egypt.
-        Your perfect getaway awaits in the heart of these timeless destinations.
+      Join us as we traverse the globe, one story at a time. 
+      Let TripTalesToday be your compass in the vast world of travel,
+       guiding you to new horizons and unforgettable experiences.
+        Pack your bags, open your mind, and let the journey begin!
       </p>
     </div>
   </div>
   <div class="product-section-main-container">
+  <?php
+  $latest_posts = get_latest_posts('post', 3);
 
-    <?php
-    $category_slugs = array('turkey', 'greece', 'egypt');
-    $categories_info = get_category_info_by_slugs($category_slugs);
+if ($latest_posts->have_posts()) :
+    while ($latest_posts->have_posts()) : $latest_posts->the_post();
+        ?>
 
-    // Display the retrieved information
-    foreach ($categories_info as $category) {
-    ?>
-      <a href=<?php echo $category['archive_url'] ?> class="product-section-main-info">
-        <div class="product-section-image-part">
-          <img src="<?php echo $category['image_url'] ?>" alt="" loading="lazy" />
-        </div>
-        <div class="product-section-texts-part">
-          <h3> <?php echo $category['name'] ?></h3>
-          <p> <?php echo $category['description'] ?></p>
-        </div>
+      <a href="<?php the_permalink(); ?>"  class="product-section-main-info">
+            <div class="product-section-image-part">
+              <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="" loading="lazy" />
+            </div>
+            <div class="product-section-texts-part">
+              <h3><?php the_title(); ?></h3>
+              <p> <?php the_excerpt(); ?></p>
+            </div>
       </a>
-    <?php
-    }
-    ?>
+
+
+        <?php
+    endwhile;
+
+    // Restore original post data
+    wp_reset_postdata();
+
+endif;
+?>
   </div>
 </div>
 
