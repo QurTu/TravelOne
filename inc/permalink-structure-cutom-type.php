@@ -21,7 +21,7 @@ function custom_post_type_link($post_link, $post) {
             }
 
             $category_path = implode('/', $term_hierarchy);
-            return home_url("/hotels-resorts/{$category_path}/{$post->post_name}/");
+            return home_url("/hotels-resorts/{$category_path}/{$post->post_name}");
         }
     }
     return $post_link;
