@@ -131,4 +131,11 @@ function custom_excerpt($limit) {
     return $excerpt;
 }
 
-
+function add_custom_post_types_to_feed($query) {
+    if ($query->is_feed() && $query->is_main_query()) {
+        $post_types = array('post', 'hotels-resorts'); 
+        $query->set('post_type', $post_types);
+    }
+    return $query;
+}
+add_filter('pre_get_posts', 'add_custom_post_types_to_feed');
